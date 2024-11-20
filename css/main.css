@@ -110,6 +110,14 @@ body {
     flex: 1 1 65%;
     padding: 20px;
     margin: 10px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 /* Footer */
