@@ -1,181 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Teddy Bear Pediatrics & Sleep Medicine - Expert care for children's health and sleep disorders in Leander, TX.">
+    <meta name="keywords" content="Pediatrics, Sleep Medicine, Leander, Pediatrician, Children's Health">
+    <meta name="author" content="Dr. Minal Patel">
+    <title>Teddy Bear Pediatrics & Sleep Medicine</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+        }
 
-/* Header/logo Title */
-.header {
-  padding: 80px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-}
+        /* Header */
+        .header {
+            background: linear-gradient(to right, #1abc9c, #16a085);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
 
-/* Increase the font size of the heading */
-.header h1 {
-  font-size: 40px;
-}
+        .header h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
 
-/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-}
+        .header p {
+            font-size: 18px;
+        }
 
-/* Style the navigation bar links */
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
+        /* Navbar */
+        .navbar {
+            display: flex;
+            background-color: #333;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            transition: background 0.3s, color 0.3s;
+            text-align: center;
+            flex: 1;
+        }
 
-/* Right-aligned link */
-.navbar a.right {
-  float: right;
-}
+        .navbar a:hover {
+            background-color: #1abc9c;
+            color: #fff;
+        }
 
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
+        .navbar a.active {
+            background-color: #666;
+            color: #fff;
+        }
 
-/* Active/current link */
-.navbar a.active {
-  background-color: #666;
-  color: white;
-}
+        /* Main Content */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
 
-/* Column container */
-.row {  
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-}
+        .side {
+            flex: 1 1 30%;
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
+        .main {
+            flex: 1 1 65%;
+            padding: 20px;
+            margin: 10px;
+        }
 
-/* Main column */
-.main {   
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
-  background-color: white;
-  padding: 20px;
-}
+        h2 {
+            color: #1abc9c;
+            margin-bottom: 15px;
+        }
 
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
+        p {
+            margin-bottom: 15px;
+        }
 
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
+        a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
+        a:hover {
+            text-decoration: underline;
+        }
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-</style>
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="header">
-  <h1>Teddy Bear Pediatrics, PLLC</h1>
-  <p>A <b>pediatric</b> practice coming to Centro Plaza in Leander.</p>
-</div>
+    <div class="header">
+        <h1>Teddy Bear Pediatrics & Sleep Medicine</h1>
+        <p>Expert care for children, coming soon to <b>Centro Plaza</b>, Leander, TX.</p>
+    </div>
 
-<div class="navbar">
-  <a href="#" class="active">Home</a>
-  <a href="#">Progress</a>
-  <a href="#">Location</a>
-  <a href="#" class="right">About US</a>
-</div>
+    <div class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Our Services</a>
+        <a href="links.html">Quick Links</a>
+        <a href="location.html">Location</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
 
-<div class="row">
-  <div class="side">
-    <h2>About Me</h2>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="side">
+            <h2>About Us</h2>
+            <p>Dr. Minal Patel is a board-certified pediatrician specializing in sleep medicine. Fluent in English,
+                Gujarati, and Hindi, she is passionate about improving children’s health and well-being.</p>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="https://stacks.cdc.gov/view/cdc/82562">CMV info parents </a></li>
+                <li><a href="https://texaswic.org/">Texas WIC</a></li>
+                <li><a
+                        href="https://texaswic.org/sites/default/files/filedownloads/F13-06-13152TexasMedicalRequestForFormulaFood---ACC.pdf">WIC
+                        Formula form</a></li>
+                <li><a href="https://www.dshs.texas.gov/sites/default/files/newborn/pdf/AlgorithmCard.pdf">CCHD
+                        Screening</a></li>
+                <li><a href="https://www.ama-assn.org/system/files/2019-06/cpt-office-prolonged-svs-code-changes.pdf">AMA
+                        coding</a></li>
+                <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9733977/">GER</a></li>
 
-    <p>I am pediatrician and speak fluent English, Hindi and Gujarati</p>
-    <!-- <h5>Photo of me:</h5>
-    <div class="fakeimg" style="height:60px;">Image</div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div> -->
-  </div>
-  <div class="main">
-    <h2>Teddy Bear Pediatrics is opening soon.</h2>
-    <h5>Current Projected opening is in Mid to late 2024</h5>
-    <div style="height:200px;"><a href="images/Girl-Teddy.jpeg" target="_blank"><img src="images/Girl-Teddy.jpeg" width="300" height="225" alt="Girl-Teddy" /></a></div>
-    <br>
-    <div class="et_pb_text_inner"><h2>Medical Services</h2>
-      <p><span style="color: #c8533b;"><em>Check-Up Visits</em></span></p>
-      <p>Regular check-ups are very important in maintaining your child’s health and well-being. During regular comprehensive check-ups, your child’s physician will assess your child’s general health status, growth, and development and provide the recommended <a href="child-vaccinations.html">vaccinations</a> for your child’s age. Check-ups are recommended at 2 weeks, 2, 4, 6, 9, 12, and 15-18 months and then annually beginning at the 2-year birthday.</p>
-      <p><a href="sick-child-pediatric-visit.html/"><span style="color: #c8533b;"><em>Sick Visits</em></span></a></p>
-      <p>Whenever your child is sick, we are here for you. We offer same-day sick visits for acute medical issues 5 days a week in all our clinics plus extended weekday hours and weekend hours in our Jackson clinic. If you suspect that your child may need to be seen by a physician, please call our office as soon as possible to schedule an appointment. We are committed to getting your child on the road to recovery as quickly as possible.</p>
-      <p><span style="color: #c8533b;"><em>Complimentary Prenatal Consultations</em></span></p>
-      <p>Before your child is born, we are happy to schedule a complimentary prenatal conference with you so that you can meet your physician and our staff and see our facilities. This gives you and your child’s physician the opportunity to develop a trusting relationship and discuss any potential complications, existing health conditions, or other circumstances that may affect you and your baby. We understand the importance of this stage of your life and are grateful that you have chosen one of our physicians to help you through each step of the way.</p>
-      <p><span id="behavioral" style="color: #c8533b;"><em>Behavioral/ADHD Consultations</em></span></p>
-      <p>Normal developmental behavioral changes are seen throughout childhood and adolescence. Many times these problems, such as temper tantrums, are considered normal for age and usually easily managed. However, some behavioral problems or school concerns may suggest a more severe underlying problem. Our physicians are knowledgeable in many areas including autism, ADHD, school concerns, and adolescent-related issues. We are able to evaluate/ diagnose and treat many conditions and refer for further specific testing if necessary.</p>
-      <p><a href="child-sports-physical.html"><span style="color: #c8533b;"><em>Sports/Camp Physicals</em></span></a></p>
-      <p>A pre-participation <a href="child-sports-physical.html">physical</a> examination is a thorough medical examination that determines whether or not it is safe for your child to participate in sports or summer camps. These physicals are often required before your child can join a sports team or attend summer camp. We offer sports/camp physicals to provide confirmation for schools, other sports organizations and summer camps of your child’s health.</p>
-      <h4><strong><span style="color: #c8533b;">Testing</span></strong></h4>
-      <p><span style="color: #c8533b;"><em>In-House Laboratory</em></span></p>
-      <p>Each clinic has a CLIA certified in-house laboratory that offers a wide array of laboratory tests including complete blood count (CBC), urinalysis, rapid strep test, flu test, mono test, and RSV test. Lab work not performed in-house is sent to one of our outside reference laboratories.</p>
-      <p><span style="color: #c8533b;"><em>Hearing &amp; Vision Screening</em></span></p>
-      <p>Hearing and vision screenings are important parts of your child’s regular check-up visits. Each CMG clinic offers both hearing and vision testing in-house.</p></div>
-            </div>
-  </div>
-</div>
+            </ul>
+        </div>
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+        <!-- Main Content -->
+        <div class="main">
+            <h2>Welcome to Teddy Bear Pediatrics</h2>
+            <p>We’re excited to announce that our clinic is projected to open in <span class="highlight">January
+                    2025</span>. Stay tuned for updates and appointment scheduling options!</p>
+            <img src="images/Girl-Teddy.jpeg" alt="Girl-Teddy">
+
+            <h2>Meet Dr. Minal Patel</h2>
+
+            <p>Minal Patel, M.D., is a board-certified pediatrician specializing in sleep medicine. She earned her
+                Bachelor of Medicine and Surgery degree and completed internship training at Saurashtra University,
+                Pandit Deendayal Upadhyay Medical College. She also completed her pediatric residency and sleep medicine
+                fellowship at the University of Mississippi Medical Center in Jackson. Before joining Pediatrix
+                Specialty Care of Austin, Dr. Patel was the program director of the sleep medicine fellowship and
+                assistant professor of sleep medicine at the University of Mississippi Medical Center. Dr. Patel is
+                passionate about helping children and their parents sleep better and promoting the overall well-being of
+                children. She understands that early diagnosis and treatment can improve many issues for children with
+                sleeping difficulties, including their behavior, memory, academic functioning, mood and long-term
+                health.
+                A diplomate of the American Board of Pediatrics and a member of the American Academy of Sleep Medicine,
+                American Academy of Pediatrics and Association of American Medical Colleges, Dr. Patel is committed to
+                providing friendly and compassionate care to her patients and their families. She speaks English,
+                Gujarati and Hindi and enjoys spending time with her spouse and family. </p>
+            <p>Dr. Patel brings a wealth of expertise, having completed her residency and fellowship at the University
+                of Mississippi Medical Center. She is dedicated to helping children achieve better health and quality
+                sleep.</p>
+
+            <h3>Education</h3>
+
+            <li>Internship: Saurashtra university Campus, 2006</li>
+            <li>Medical School: Pandit Deendayal Upadhyay Medical College, 2006 </li>
+            <li>Residency: University of Mississippi, 2016 </li>
+            <li>Fellowship: University of Mississippi, 2019 </li>
+
+            <h3>Board Certifications</h3>
+
+            <li>American Board of Pediatrics - Pediatrics </li>
+            <li>American Board of Pediatrics - Pediatrics, Sleep Medicine </li>
+
+            <h3> Appointment </h3>
+            <p>To arrange an appointment with Dr. Minal Patel at our facility, kindly reach out at (512) 931-1575.
+                Alternatively, you can conveniently schedule your appointment online. Link coming soon. </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Contact us at (512) 931-1575 or teddybearpediatricspllc@gmail.com | Follow us on <a
+                href="https://www.facebook.com/profile.php?id=61568771647767">Facebook</a></p>
+        <p>&copy; 2024 Teddy Bear Pediatrics & Sleep Medicine. All Rights Reserved.</p>
+    </div>
 
 </body>
+
 </html>
