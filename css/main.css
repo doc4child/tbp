@@ -14,9 +14,8 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(to right, #1abc9c, #16a085);
+    background: linear-gradient(to right, #9fb7b2, #b9d5d0);
     color: #fff;
-    padding: 60px 20px;
     text-align: center;
 }
 
