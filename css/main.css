@@ -143,3 +143,32 @@ body {
         flex-direction: column;
     }
 }
+
+/* Book appointment button */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    margin: 0;
+}
+
+.book-appointment-btn {
+    background-color: #007bff; /* blue color */
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.book-appointment-btn:hover {
+    background-color: #0056b3; /* darker blue */
+}
+
+.book-appointment-btn:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
