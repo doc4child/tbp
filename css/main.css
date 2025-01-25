@@ -156,19 +156,21 @@ body {
 .book-appointment-btn {
     background-color: #007bff; /* blue color */
     color: white;
-    font-size: 1.5rem;
-    padding: 10px 20px;
+    font-size: 2rem; /* Bigger font size for prominence */
+    padding: 20px 40px; /* Increased padding for a larger button */
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .book-appointment-btn:hover {
     background-color: #0056b3; /* darker blue */
+    transform: scale(1.05); /* Slightly enlarges button on hover */
 }
 
 .book-appointment-btn:active {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98); /* Shrinks button slightly when clicked */
 }
