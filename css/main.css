@@ -153,7 +153,7 @@ body {
     margin: 0;
 }
 
-.book-appointment-btn {
+.button-cls {
     background-color: #007bff; /* blue color */
     color: white;
     font-size: 2rem; /* Bigger font size for prominence */
@@ -166,12 +166,24 @@ body {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.book-appointment-btn:hover {
+.button-cls:hover {
     background-color: #0056b3; /* darker blue */
     transform: scale(1.05); /* Slightly enlarges button on hover */
 }
 
-.book-appointment-btn:active {
+.button-cls:active {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     transform: scale(0.98); /* Shrinks button slightly when clicked */
 }
+
+<div class="button-container">
+    <button class="button"
+        onclick="window.open('https://healow.com/apps/practice/teddy-bear-pediatrics-sleep-medicine-30200?v=2&t=1', '_blank')">
+        Book Appointment
+    </button>
+
+    <button class="button"
+        onclick="window.open('https://mycw239.ecwcloud.com/portal28055/jsp/login.jsp', '_blank')">
+        Patient Portal
+    </button>
+</div>
