@@ -157,9 +157,10 @@ body {
     background-color: #007bff; /* blue color */
     color: white;
     font-size: 2rem; /* Bigger font size for prominence */
-    padding: 20px 40px; /* Increased padding for a larger button */
+    padding: 10px 20px; /* Increased padding for a larger button */
     border: none;
     border-radius: 12px;
+    margin-right: 10px;
     cursor: pointer;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     transition: background-color 0.3s ease, transform 0.2s ease;
