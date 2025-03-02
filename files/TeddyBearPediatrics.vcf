@@ -1,12 +1,18 @@
-BEGIN:VCARD
-VERSION:3.0
-PRODID:-//Apple Inc.//iPhone OS 18.3.1//EN
-N:;Teddy Bear Pediatrics & Sleep Medicine;;;
-FN:Teddy Bear Pediatrics & Sleep Medicine
-EMAIL;type=INTERNET;type=HOME;type=pref:teddybearpediatrics@yahoo.com
-TEL;type=WORK;type=FAX;type=pref:(877) 569-2885
-TEL;type=CELL;type=VOICE:(512) 931-1575
-X-SOCIALPROFILE;type=facebook:http://www.facebook.com/facebook.com/teddybearpediatrics
-item1.URL;type=pref:https://teddybearpediatrics.com
-item1.X-ABLabel:_$!<HomePage>!$_
-END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+FN:Teddy Bear Pediatrics & Sleep Medicine
+N:Pediatrics & Sleep Medicine;Teddy Bear;;;
+item1.EMAIL;TYPE=INTERNET:TeddyBearPediatrics@yahoo.com
+item1.X-ABLabel:
+item2.TEL:(512) 931-1575
+item2.X-ABLabel:Phone
+item3.TEL:(877) 569-2885
+item3.X-ABLabel:Fax
+item4.ADR:;Suite 405;14300 Ronald W Regan Blvd;Cedar Park;TX;78641;US;14300
+  Ronald W Regan Blvd\nSuite 405\, Cedar Park\, TX 78641\nUS
+item4.X-ABLabel:Clinic
+ORG:Dr Minal Patel, Dr Jaimin Patel
+item5.URL:https\://teddybearpediatrics.com/
+item5.X-ABLabel:
+CATEGORIES:myContacts
+END:VCARD

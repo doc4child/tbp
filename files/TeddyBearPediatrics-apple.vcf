@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//iPhone OS 18.3.1//EN
+N:;Teddy Bear Pediatrics & Sleep Medicine;;;
+FN:Teddy Bear Pediatrics & Sleep Medicine
+EMAIL;type=INTERNET;type=HOME;type=pref:teddybearpediatrics@yahoo.com
+TEL;type=WORK;type=FAX;type=pref:(877) 569-2885
+TEL;type=CELL;type=VOICE:(512) 931-1575
+X-SOCIALPROFILE;type=facebook:http://www.facebook.com/facebook.com/teddybearpediatrics
+item1.URL;type=pref:https://teddybearpediatrics.com
+item1.X-ABLabel:_$!<HomePage>!$_
+END:VCARD
