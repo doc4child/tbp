@@ -1,6 +1,60 @@
-<!-- ============================================ -->
-<!--                    FAQ                       -->
-<!-- ============================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        .faq-question {
+            cursor: pointer;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+        }
+        .faq-answer {
+            display: none;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e1e1e1;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">What is your name?</div>
+        <div class="faq-answer">My name is GitHub Copilot.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">How do I use this FAQ page?</div>
+        <div class="faq-answer">Click on a question to see the answer.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">Can I add more questions?</div>
+        <div class="faq-answer">Yes, you can add as many questions as you like.</div>
+    </div>
+
+    <script>
+        function toggleAnswer(element) {
+            var answer = element.nextElementSibling;
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+/***      
+
+
+
 <head>
 <link rel="stylesheet" href="/css/core.css">
 <link rel="stylesheet" href="/css/faq.css">
@@ -520,3 +574,5 @@
     </div>
 </section>
 </body>
+
+*/
