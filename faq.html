@@ -1,53 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ</title>
-    <style>
-        .faq-question {
-            cursor: pointer;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #f1f1f1;
-            border: 1px solid #ccc;
-        }
-        .faq-answer {
-            display: none;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #e1e1e1;
-            border: 1px solid #ccc;
-        }
-    </style>
+    <meta name="description"
+        content="Teddy Bear Pediatrics & Sleep Medicine - Expert care for children's health and sleep disorders in Leander, TX.">
+    <meta name="keywords" content="Pediatrics, Sleep Medicine, Leander, Pediatrician, Children's Health">
+    <meta name="author" content="Dr. Minal Patel">
+    <title>Teddy Bear Pediatrics & Sleep Medicine</title>
+    <link rel='stylesheet' type='text/css' href='css/main.css'>
+
+
+        <style>
+            .faq-question {
+                cursor: pointer;
+                margin: 10px 0;
+                padding: 10px;
+                background-color: #f1f1f1;
+                border: 1px solid #ccc;
+            }
+            .faq-answer {
+                display: none;
+                margin: 10px 0;
+                padding: 10px;
+                background-color: #e1e1e1;
+                        }
+        </style>
+
 </head>
+
 <body>
-    <h1>Frequently Asked Questions</h1>
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">What is your name?</div>
-        <div class="faq-answer">My name is GitHub Copilot.</div>
-    </div>
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">How do I use this FAQ page?</div>
-        <div class="faq-answer">Click on a question to see the answer.</div>
-    </div>
-    <div class="faq-item">
-        <div class="faq-question" onclick="toggleAnswer(this)">Can I add more questions?</div>
-        <div class="faq-answer">Yes, you can add as many questions as you like.</div>
+
+    <div class="header">
+        <object data="logo/logo.svg" width="600" height="200"> </object>
     </div>
 
-    <script>
-        function toggleAnswer(element) {
-            var answer = element.nextElementSibling;
-            if (answer.style.display === "none" || answer.style.display === "") {
-                answer.style.display = "block";
-            } else {
-                answer.style.display = "none";
-            }
-        }
-    </script>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="services.html">Our Services</a>
+        <a href="links.html" class="active">Quick Links</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+
+
+    </div>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="contact-info">
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">What is your name?</div>
+                <div class="faq-answer">My name is GitHub Copilot.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">How do I use this FAQ page?</div>
+                <div class="faq-answer">Click on a question to see the answer.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">Can I add more questions?</div>
+                <div class="faq-answer">Yes, you can add as many questions as you like.</div>
+            </div>
+        
+            <script>
+                function toggleAnswer(element) {
+                    var answer = element.nextElementSibling;
+                    if (answer.style.display === "none" || answer.style.display === "") {
+                        answer.style.display = "block";
+                    } else {
+                        answer.style.display = "none";
+                    }
+                }
+            </script>
+        </div>
+        </br>
+
+
+
+
+    </div>
+
+    <div class="footer">
+        <p>Contact us at (512) 931-1575 or teddybearpediatrics@yahoo.com | Follow us on <a
+                href="https://www.facebook.com/teddybearpediatrics">Facebook</a></p>
+        <p>&copy; 2024 Teddy Bear Pediatrics & Sleep Medicine. All Rights Reserved.</p>
+    </div>
+
 </body>
+
 </html>
+
 
 
 
