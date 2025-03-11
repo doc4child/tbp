@@ -15,22 +15,23 @@
     <link rel='stylesheet' type='text/css' href='css/main.css'>
 
 
-        <style>
-            .faq-question {
-                cursor: pointer;
-                margin: 10px 0;
-                padding: 10px;
-                background-color: #dac3c2;
-                border: 1px solid #ccc;
-                color:red;
-            }
-            .faq-answer {
-                display: none;
-                margin: 10px 0;
-                padding: 10px;
-                background-color: #ffffff;
-             }
-        </style>
+    <style>
+        .faq-question {
+            cursor: pointer;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #dac3c2;
+            border: 1px solid #ccc;
+            color: red;
+        }
+
+        .faq-answer {
+            display: none;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+    </style>
 
 </head>
 
@@ -56,48 +57,98 @@
             <h1>Frequently Asked Questions</h1>
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleAnswer(this)">Which insurances do you take?</div>
-                <div class="faq-answer"> <h2>We take following insurances</h2>
-                    
+                <div class="faq-answer">
+                    <h2>We take following insurances</h2>
+
                     <ul>
-                        
+
                         <li>Blue Cross Blue Shield BCBS</li>
-                        <li>Aetna </li>    
-                        <li>Cigna </li>   
-                        <li>United Health </li>         
-                        <li>BSW Baylor Scott and White Health</li>   
-                        <li>Scott and White Health </li>   
-                        <li>Seaton Health Plan  </li>   
-                        <li>Dell Health Plan </li>   
-                        <li>Oscar Health Plan of Texas </li>   
-                        <li>Tricare West/East (Humana) </li>   
-                        <li>Medicare </li>   
-                        <li>Medicaid </li>   
-      
-        
+                        <li>Aetna </li>
+                        <li>Cigna </li>
+                        <li>United Health </li>
+                        <li>BSW Baylor Scott and White Health</li>
+                        <li>Scott and White Health </li>
+                        <li>Seaton Health Plan </li>
+                        <li>Dell Health Plan </li>
+                        <li>Oscar Health Plan of Texas </li>
+                        <li>Tricare West/East (Humana) </li>
+                        <li>Medicare </li>
+                        <li>Medicaid </li>
+
+
                     </ul>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">How do I use this FAQ page?</div>
-                <div class="faq-answer">Click on a question to see the answer.</div>
+                <div class="faq-question" onclick="toggleAnswer(this)">What are the signs of a sleep disorder?</div>
+                <div class="faq-answer">Symptoms may include excessive daytime sleepiness, loud snoring, gasping for air
+                    during sleep, difficulty falling or staying asleep, and waking up unrefreshed.
+                </div>
+            </div>
+
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">How is a sleep study conducted?</div>
+                <div class="faq-answer">Sleep studies can be performed in a sleep lab or at home using specialized
+                    equipment to monitor brain activity, breathing, heart rate, and movement.
+
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">What treatments are available for sleep apnea?
+                </div>
+                <div class="faq-answer">Treatment options include CPAP therapy, oral appliances, lifestyle
+                    modifications, and in some cases,
+                    surgery.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">Do children suffer from sleep disorders?</div>
+                <div class="faq-answer">Yes, children can experience sleep disorders such as sleep apnea, insomnia,
+                    night terrors, and restless
+                    leg syndrome.
+                </div>
+            </div>
+
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">How do I schedule an appointment?</div>
+                <div class="faq-answer">You can schedule a consultation by calling our office or from homepage of this
+                    website.
+
+                </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer(this)">Can I add more questions?</div>
-                <div class="faq-answer">Yes, you can add as many questions as you like.</div>
+                <div class="faq-question" onclick="toggleAnswer(this)">How soon are appointments available?</div>
+                <div class="faq-answer">
+                    We are new practice, and we have appointments available within a week. For urgent matters we can see patients same day or next day.
+
+                </div>
             </div>
-        
-            <script>
-                function toggleAnswer(element) {
-                    var answer = element.nextElementSibling;
-                    if (answer.style.display === "none" || answer.style.display === "") {
-                        answer.style.display = "block";
-                    } else {
-                        answer.style.display = "none";
-                    }
-                }
-            </script>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">When will you give me results of my sleep study?</div>
+                <div class="faq-answer">
+                    •	We can perform sleep studies within a week or sometimes in days. We strive to provide results of the studies within 48 hrs of completing the study.
+                </div>
+            </div>
+
         </div>
-        </br>
+
+
+        <script>
+            function toggleAnswer(element) {
+                var answer = element.nextElementSibling;
+                if (answer.style.display === "none" || answer.style.display === "") {
+                    answer.style.display = "block";
+                } else {
+                    answer.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+    </br>
 
 
 
@@ -113,5 +164,3 @@
 </body>
 
 </html>
-
-
