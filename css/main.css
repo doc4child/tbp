@@ -15,9 +15,11 @@ body {
 /* Header */
 .header {
     background: linear-gradient(to right, #9fb7b2, #b9d5d0);
+    align: center;
     color: #fff;
     text-align: center;
-    max-width: 800px;
+    
+    max-width: 80%;
 }
 
 .header h1 {
