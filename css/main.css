@@ -142,12 +142,16 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+} */
+@media (max-width: 100%) {
     .container {
         flex-direction: column;
     }
 }
-
 /* Book appointment button */
 .button-container {
     display: flex;
