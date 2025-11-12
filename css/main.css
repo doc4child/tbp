@@ -135,6 +135,44 @@ body {
     margin-top: 20px;
 }
 
+/* Pricing */
+    .pricing{
+      margin-top:14px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .pricing-table{
+      width:100%;
+      border-collapse:collapse;
+      background:transparent;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 6px 18px rgba(16,24,40,0.03);
+    }
+
+    .pricing-table th, .pricing-table td{
+      padding:12px 14px;
+      text-align:left;
+      border-bottom:1px solid #F3F4F6;
+      background:var(--card);
+      font-size:15px;
+    }
+
+    .pricing-table thead th{
+      background:linear-gradient(90deg, #FBFBFF, #FFF);
+      color:var(--muted);
+      font-weight:600;
+      border-bottom:2px solid #EEF2FF;
+    }
+
+    .price{
+      font-weight:700;
+      color:var(--text);
+    }
+
+
 .footer a {
     color: #1abc9c;
     text-decoration: none;
