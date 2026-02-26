@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Neonatal Delivery Note Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { margin-top: 30px; }
+    .section { margin-bottom: 20px; }
+    label { display: block; margin-top: 10px; }
+    textarea { width: 100%; height: 150px; }
+    .apgar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 350px; }
+    select { width: 100%; }
+  </style>
+</head>
+<body>
+
+<h1>Delivery Note Generator</h1>
+
+<div class="section">
+  <h2>Delivery Details</h2>
+
+  <label>Delayed cord clamping duration (minutes):
+    <input id="dcc" type="number" min="0" value="1">
+  </label>
+
+  <label>Baby's initial condition description:
+    <input id="initialCondition" type="text"
+      placeholder="e.g. Baby was born and started crying">
+  </label>
+
+  <label>Resuscitation steps performed:
+    <input id="steps" type="text"
+      placeholder="e.g. dried, suctioned and stimulated">
+  </label>
+
+  <label>Color/transition description:
+    <input id="color" type="text"
+      placeholder="e.g. acrocyanosed initially and color gradually improved">
+  </label>
+</div>
+
+<div class="section">
+  <h2>Apgar Score (1 Minute)</h2>
+  <div class="apgar-grid">
+    <label>Appearance:
+      <select id="a1">
+        <option value="0">0 - Blue/pale</option>
+        <option value="1">1 - Body pink, extremities blue</option>
+        <option value="2">2 - Completely pink</option>
+      </select>
+    </label>
+
+    <label>Pulse:
+      <select id="p1">
+        <option value="0">0 - Absent</option>
+        <option value="1">1 - <100</option>
+        <option value="2">2 - >100</option>
+      </select>
+    </label>
+
+    <label>Grimace:
+      <select id="g1">
+        <option value="0">0 - No response</option>
+        <option value="1">1 - Grimace</option>
+        <option value="2">2 - Cry/withdrawal</option>
+      </select>
+    </label>
+
+    <label>Activity:
+      <select id="m1">
+        <option value="0">0 - Limp</option>
+        <option value="1">1 - Some flexion</option>
+        <option value="2">2 - Active motion</option>
+      </select>
+    </label>
+
+    <label>Respiration:
+      <select id="r1">
+        <option value="0">0 - Absent</option>
+        <option value="1">1 - Slow/irregular</option>
+        <option value="2">2 - Strong cry</option>
+      </select>
+    </label>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Apgar Score (5 Minutes)</h2>
+  <div class="apgar-grid">
+    <label>Appearance:
+      <select id="a5">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </label>
+
+    <label>Pulse:
+      <select id="p5">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </label>
+
+    <label>Grimace:
+      <select id="g5">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </label>
+
+    <label>Activity:
+      <select id="m5">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </label>
+
+    <label>Respiration:
+      <select id="r5">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </label>
+  </div>
+</div>
+
+<button onclick="generateNote()">Generate Delivery Note</button>
+
+<h2>Generated Delivery Note</h2>
+<textarea id="output"></textarea>
+
+<script>
+function calcApgar(prefix) {
+  return (
+    Number(document.getElementById("a" + prefix).value) +
+    Number(document.getElementById("p" + prefix).value) +
+    Number(document.getElementById("g" + prefix).value) +
+    Number(document.getElementById("m" + prefix).value) +
+    Number(document.getElementById("r" + prefix).value)
+  );
+}
+
+function generateNote() {
+  const initial = document.getElementById("initialCondition").value;
+  const dcc = document.getElementById("dcc").value;
+  const steps = document.getElementById("steps").value;
+  const color = document.getElementById("color").value;
+
+  const apgar1 = calcApgar("1");
+  const apgar5 = calcApgar("5");
+
+  const note =
+    initial + ". " +
+    "Delayed cord clamping was done for " + dcc + " minute(s). " +
+    "Baby was brought to the warmer, " + steps + ". " +
+    "Baby appeared " + color + ". " +
+    "Apgar scores were " + apgar1 + " at 1 minute and " + apgar5 + " at 5 minutes.";
+
+  document.getElementById("output").value = note;
+}
+</script>
+
+</body>
+</html>
