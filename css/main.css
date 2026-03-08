@@ -1,238 +1,524 @@
+/* ===== MOBILE-FIRST CSS ===== */
+
+/* CSS Custom Properties */
+:root {
+    --primary-color: #1abc9c;
+    --primary-dark: #0056b3;
+    --bg-light: #f9f9f9;
+    --text-dark: #333;
+    --text-light: #666;
+    --border-color: #e0e0e0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 6px 18px rgba(16, 24, 40, 0.03);
+    --safe-area-top: env(safe-area-inset-top, 0);
+    --safe-area-bottom: env(safe-area-inset-bottom, 0);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent; /* iOS fix */
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    margin: 0;
+    color: var(--text-dark);
+    background-color: #fff;
+    -webkit-user-select: none; /* iOS: Prevent default selection UI */
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-top: var(--safe-area-top);
+    padding-bottom: var(--safe-area-bottom);
 }
 
-
-/* Header */
+/* ===== HEADER ===== */
 .header {
-    background: linear-gradient(to right, #9fb7b2, #b9d5d0);
-    align: center;
+    background: linear-gradient(135deg, #9fb7b2 0%, #b9d5d0 100%);
     color: #fff;
     text-align: center;
-    
-/*     max-width: 80%; */
+    padding: 1rem;
+    width: 100%;
+}
+
+.header img {
+    /* responsive svg logo */
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .header h1 {
-    font-size: 50px;
-    margin-bottom: 10px;
+    font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive font sizing */
+    margin: 1rem 0 0.5rem;
+    line-height: 1.2;
 }
 
 .header p {
-    font-size: 18px;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    margin: 0;
+    opacity: 0.95;
 }
 
-/* Navbar */
+/* ===== NAVBAR - MOBILE FIRST ===== */
 .navbar {
     display: flex;
     background-color: #333;
-    padding: 10px;
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
+    flex-wrap: wrap;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .navbar a {
     color: #fff;
     text-decoration: none;
-    padding: 14px 20px;
-    transition: background 0.3s, color 0.3s;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
     text-align: center;
     flex: 1;
+    min-width: 44px; /* Minimum touch target */
+    min-height: 44px; /* Minimum touch target */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    -webkit-touch-callout: none; /* iOS: disable callout on long press */
+}
+
+.navbar a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
+}
+
+.navbar a:active {
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 .navbar a:hover {
-    background-color: #1abc9c;
+    background-color: var(--primary-color);
     color: #fff;
 }
 
 .navbar a.active {
-    background-color: #666;
+    background-color: #555;
     color: #fff;
 }
 
-/* Main Content */
+/* ===== MAIN CONTENT ===== */
 .container {
-    padding: 20px;
+    padding: 1rem;
+    padding-bottom: max(1rem, var(--safe-area-bottom));
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    max-width: 100%;
+    width: 100%;
 }
 
 .contact-info {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-/*     max-width: 600px;
-    width: 100%; */
-        max-width: 80%;
-/*     width: 100%; */
+    background: var(--bg-light);
+    padding: 1.25rem;
+    border-radius: 0.375rem;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
+}
+
+.contact-info h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    line-height: 1.2;
 }
 
 .contact-info h2 {
-    color: #1abc9c;
-    margin-bottom: 15px;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+}
+
+.contact-info h3 {
+    color: var(--text-dark);
+    margin: 1rem 0 0.5rem;
+    font-size: clamp(1.1rem, 3.5vw, 1.35rem);
 }
 
 .contact-info p {
-    margin-bottom: 10px;
-    font-size: 16px;
+    margin-bottom: 1rem;
+    font-size: clamp(0.95rem, 2.5vw, 1rem);
+    line-height: 1.7;
 }
 
 .contact-info a {
-    color: #1abc9c;
+    color: var(--primary-color);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    padding: 2px 4px;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
+.contact-info a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
+
+.contact-info a:active {
+    background-color: rgba(26, 188, 156, 0.1);
+}
+
 
 .side {
-    flex: 1 1 30%;
-    background: #f9f9f9;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    background: var(--bg-light);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0.375rem;
+    box-shadow: var(--shadow-sm);
 }
 
 .main {
-    flex: 1 1 65%;
-    padding: 20px;
-    margin: 10px;
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-/*     max-width: 600px;
-    width: 100%; */
-        max-width: 80%;
-/*     width: 100%; */
+    flex: 1;
+    padding: 1.25rem;
+    background: var(--bg-light);
+    border-radius: 0.375rem;
+    box-shadow: var(--shadow-sm);
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
-/* Footer */
+/* ===== LISTS ===== */
+.contact-info ul,
+.contact-info ol {
+    margin: 1rem 0 1rem 1.5rem;
+    padding: 0;
+    line-height: 1.8;
+}
+
+.contact-info li {
+    margin-bottom: 0.75rem;
+    font-size: clamp(0.95rem, 2.5vw, 1rem);
+}
+
+/* ===== FOOTER ===== */
 .footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 20px;
-    margin-top: 20px;
+    padding: 1.5rem 1rem;
+    padding-bottom: max(1.5rem, calc(1rem + var(--safe-area-bottom)));
+    margin-top: 2rem;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
 }
 
-/* Pricing */
-    .pricing{
-      margin-top:14px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-
-    .pricing-table{
-      width:100%;
-      border-collapse:collapse;
-      background:transparent;
-      border-radius:10px;
-      overflow:hidden;
-      box-shadow:0 6px 18px rgba(16,24,40,0.03);
-    }
-
-    .pricing-table th, .pricing-table td{
-      padding:12px 14px;
-      text-align:left;
-      border-bottom:1px solid #F3F4F6;
-      background:var(--card);
-      font-size:15px;
-    }
-
-    .pricing-table thead th{
-      background:linear-gradient(90deg, #FBFBFF, #FFF);
-      color:var(--muted);
-      font-weight:600;
-      border-bottom:2px solid #EEF2FF;
-    }
-
-    .price{
-      font-weight:700;
-      color:var(--text);
-    }
-
+.footer p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
 
 .footer a {
-    color: #1abc9c;
+    color: var(--primary-color);
     text-decoration: none;
+    font-weight: 600;
+}
+
+.footer a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.footer a:active {
+    opacity: 0.8;
 }
 
 .footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Design */
-/* @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-} */
-@media (max-width: 800px) {
-    .container {
-        flex-direction: column;
-    }
+/* ===== PRICING TABLE ===== */
+.pricing {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
-/* Book appointment button */
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+    border-radius: 0.625rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+}
+
+.pricing-table th,
+.pricing-table td {
+    padding: clamp(0.75rem, 2vw, 1rem);
+    text-align: left;
+    border-bottom: 1px solid #f3f4f6;
+    background: var(--bg-light);
+}
+
+.pricing-table thead th {
+    background: linear-gradient(90deg, #fbfbff, #fff);
+    color: #666;
+    font-weight: 700;
+    border-bottom: 2px solid #eef2ff;
+}
+
+.pricing-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.pricing-table tbody tr:active {
+    background-color: #f0f0f0;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* ===== BUTTONS ===== */
 .button-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-    margin: 0;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    margin: 1.5rem 0;
 }
 
-.button-cls {
-    background-color: #007bff; /* blue color */
+.button-cls,
+button {
+    background-color: var(--primary-dark);
     color: white;
-    font-size: 2rem; /* Bigger font size for prominence */
-    padding: 10px 20px; /* Increased padding for a larger button */
+    font-size: clamp(1rem, 3vw, 1.125rem);
+    padding: clamp(0.875rem, 3vw, 1rem) clamp(1rem, 4vw, 1.5rem);
+    min-height: 44px; /* Touch target minimum */
+    min-width: 44px;
     border: none;
-    border-radius: 12px;
-    margin-right: 10px;
+    border-radius: 0.375rem;
     cursor: pointer;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: var(--shadow-md);
+    transition: all 0.2s ease;
+    font-weight: 600;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation; /* Android optimization */
 }
 
-.button-cls:hover {
-    background-color: #0056b3; /* darker blue */
-    transform: scale(1.05); /* Slightly enlarges button on hover */
+.button-cls:focus,
+button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
-.button-cls:active {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    transform: scale(0.98); /* Shrinks button slightly when clicked */
+.button-cls:hover,
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 8px 12px rgba(0, 86, 179, 0.25);
 }
 
-<div class="button-container">
-    <button class="button"
-        onclick="window.open('https://healow.com/apps/practice/teddy-bear-pediatrics-sleep-medicine-30200?v=2&t=1', '_blank')">
-        Book Appointment
-    </button>
+.button-cls:active,
+button:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+}
 
-    <button class="button"
-        onclick="window.open('https://mycw239.ecwcloud.com/portal28055/jsp/login.jsp', '_blank')">
-        Patient Portal
-    </button>
-</div>
+/* ===== IMAGES ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Lazy load support */
+}
+
+img[data-lazy] {
+    opacity: 0.7;
+}
+
+img[data-lazy-loaded] {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* ===== TABLE (FAQs, etc) ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+}
+
+table th,
+table td {
+    padding: clamp(0.625rem, 2vw, 0.875rem);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+    background-color: #f5f5f5;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonial {
+    background: linear-gradient(135deg, rgba(155, 183, 178, 0.1), rgba(185, 213, 208, 0.1));
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0.375rem;
+    font-style: italic;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    line-height: 1.7;
+}
+
+/* ===== FORMS ===== */
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: 16px; /* iOS: Prevents auto-zoom on input focus */
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    -webkit-appearance: none; /* iOS: Remove browser default styling */
+    appearance: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.1);
+}
+
+/* ===== RESPONSIVE DESIGN - TABLET & UP ===== */
+@media (min-width: 600px) {
+    /* Header adjustments */
+    .header {
+        padding: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Navbar - more compact on larger screens */
+    .navbar a {
+        padding: 0;
+        font-size: 1rem;
+        min-height: 48px;
+    }
+
+    /* Content max-width */
+    .container {
+        padding: 2rem;
+        max-width: 100%;
+    }
+
+    .contact-info {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1.75rem;
+    }
+
+    .button-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .button-cls,
+    button {
+        flex: 0 1 auto;
+        min-width: 200px;
+    }
+}
+
+/* ===== RESPONSIVE DESIGN - DESKTOP ===== */
+@media (min-width: 1024px) {
+    body {
+        font-size: 1.05rem;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    .container {
+        padding: 2.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .contact-info {
+        max-width: 85%;
+        padding: 2rem;
+    }
+
+    .navbar a {
+        padding: clamp(1rem, 1.5vw, 1.5rem);
+        min-height: auto;
+        border: none;
+    }
+
+    .navbar a:hover {
+        background-color: var(--primary-color);
+    }
+
+    /* Pricing table - horizontal scroll removed */
+    .pricing-table {
+        font-size: 1rem;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+        padding: 1.25rem;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar,
+    .button-container {
+        display: none;
+    }
+
+    .contact-info {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+}
